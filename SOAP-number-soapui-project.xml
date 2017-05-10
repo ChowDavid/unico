@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e9b8a7d8-0fae-4cca-8e9d-9f551e8ff6a0" activeEnvironment="Default" name="SOAP number" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="4c47e3fc-cff5-422f-a10c-6ebe74d6bdca" wsaVersion="NONE" name="numbersPortSoap11" type="wsdl" bindingName="{http://david.com/unico/gs-producing-web-service}numbersPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/soapWEB/ws/numbers.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/soapWEB/ws/numbers.wsdl"><con:part><con:url>http://localhost:8080/soapWEB/ws/numbers.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://david.com/unico/gs-producing-web-service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://david.com/unico/gs-producing-web-service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://david.com/unico/gs-producing-web-service">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://david.com/unico/gs-producing-web-service" xmlns:tns="http://spring.io/guides/gs-producing-web-service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="gcdRequest"/>
+      <xs:element name="gcdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="gcd" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="gcdSumRequest"/>
+      <xs:element name="gcdSumResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="gcd" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="gcdListRequest"/>
+      <xs:element name="gcdListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="gcd" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="gcdListResponse">
+    <wsdl:part element="tns:gcdListResponse" name="gcdListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="gcdSumRequest">
+    <wsdl:part element="tns:gcdSumRequest" name="gcdSumRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="gcdSumResponse">
+    <wsdl:part element="tns:gcdSumResponse" name="gcdSumResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="gcdRequest">
+    <wsdl:part element="tns:gcdRequest" name="gcdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="gcdListRequest">
+    <wsdl:part element="tns:gcdListRequest" name="gcdListRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="gcdResponse">
+    <wsdl:part element="tns:gcdResponse" name="gcdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="numbersPort">
+    <wsdl:operation name="gcdList">
+      <wsdl:input message="tns:gcdListRequest" name="gcdListRequest"></wsdl:input>
+      <wsdl:output message="tns:gcdListResponse" name="gcdListResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gcdSum">
+      <wsdl:input message="tns:gcdSumRequest" name="gcdSumRequest"></wsdl:input>
+      <wsdl:output message="tns:gcdSumResponse" name="gcdSumResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gcd">
+      <wsdl:input message="tns:gcdRequest" name="gcdRequest"></wsdl:input>
+      <wsdl:output message="tns:gcdResponse" name="gcdResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="numbersPortSoap11" type="tns:numbersPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="gcdList">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="gcdListRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="gcdListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gcdSum">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="gcdSumRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="gcdSumResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gcd">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="gcdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="gcdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="numbersPortService">
+    <wsdl:port binding="tns:numbersPortSoap11" name="numbersPortSoap11">
+      <soap:address location="http://localhost:8080/soapWEB/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/soapWEB/ws</con:endpoint></con:endpoints><con:operation id="97c1273a-1776-4b7e-a68e-1b32ceaaf4b4" isOneWay="false" action="" name="gcd" bindingOperationName="gcd" type="Request-Response" outputName="gcdResponse" inputName="gcdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="be44ce8d-2c7c-4e22-a9c9-e4b63caa4ec5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soapWEB/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gs="http://david.com/unico/gs-producing-web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:gcdRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://david.com/unico/gs-producing-web-service/numbersPort/gcdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a5bee644-eec0-4eeb-a346-372096639e35" isOneWay="false" action="" name="gcdList" bindingOperationName="gcdList" type="Request-Response" outputName="gcdListResponse" inputName="gcdListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="57e6829f-77b4-4212-a15d-462b27184f24" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soapWEB/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gs="http://david.com/unico/gs-producing-web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:gcdListRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://david.com/unico/gs-producing-web-service/numbersPort/gcdListRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4730d7fa-6e62-4daf-880c-411e871965c9" isOneWay="false" action="" name="gcdSum" bindingOperationName="gcdSum" type="Request-Response" outputName="gcdSumResponse" inputName="gcdSumRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7acbd089-21d1-4d13-912b-9ee1caa65c3a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soapWEB/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gs="http://david.com/unico/gs-producing-web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:gcdSumRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://david.com/unico/gs-producing-web-service/numbersPort/gcdSumRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

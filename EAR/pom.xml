@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.david.unico</groupId>
+		<artifactId>unico-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>EAR</artifactId>
+	<packaging>ear</packaging>
+	<name>EAR Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<build>
+		<finalName>EAR</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<modules>
+						<webModule>
+							<groupId>com.david.unico</groupId>
+							<artifactId>restfulWEB</artifactId>
+							<uri>restfulWEB.war</uri>
+							<bundleFileName>restfulWEB.war</bundleFileName>
+							<contextRoot>/restfulWEB</contextRoot>
+						</webModule>
+						<!--  
+						<webModule>
+							<groupId>com.david.unico</groupId>
+							<artifactId>jmsClient</artifactId>
+							<uri>jmsClient.war</uri>
+							<bundleFileName>jmsClient.war</bundleFileName>
+							<contextRoot>/jmsClient</contextRoot>
+						</webModule>
+						<webModule>
+							<groupId>com.david.unico</groupId>
+							<artifactId>soapWEB</artifactId>
+							<uri>soapWEB.war</uri>
+							<bundleFileName>soapWEB.war</bundleFileName>
+							<contextRoot>/soapWEB</contextRoot>
+						</webModule>
+						-->
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.david.unico</groupId>
+			<artifactId>jmsClient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.david.unico</groupId>
+			<artifactId>restfulWEB</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.david.unico</groupId>
+			<artifactId>soapWEB</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+</project>

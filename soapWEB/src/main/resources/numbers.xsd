@@ -1,0 +1,32 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+	targetNamespace="http://david.com/unico/gs-producing-web-service"
+	elementFormDefault="qualified">
+
+	<xs:element name="gcdRequest"></xs:element>
+	<xs:element name="gcdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="gcd" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gcdSumRequest"></xs:element>
+
+	<xs:element name="gcdSumResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="gcd" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gcdListRequest"></xs:element>
+
+	<xs:element name="gcdListResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="gcd" type="xs:int" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
