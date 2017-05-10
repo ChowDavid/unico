@@ -65,6 +65,7 @@
 - restart the TOME-EE server.
 
 #DB Schema
+```
 CREATE TABLE `Numbers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first` int(11) NOT NULL,
@@ -72,5 +73,6 @@ CREATE TABLE `Numbers` (
   `gcd` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+```
 
 
