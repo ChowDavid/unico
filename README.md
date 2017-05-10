@@ -64,7 +64,7 @@
 - deploy the EAR.ear file from <Parent>/EAR/target/EAR.ear to apps folder
 - restart the TOME-EE server.
 
-#DB Schema
+# DB Schema
 ```
 CREATE TABLE `Numbers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -74,5 +74,10 @@ CREATE TABLE `Numbers` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 ```
+
+# Test case for soapUI
+- REST*.xml
+- SOAP*.xml
+- TestGuide.docx
 
 
